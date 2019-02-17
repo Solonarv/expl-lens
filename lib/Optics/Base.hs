@@ -22,5 +22,3 @@ class Compose o p q | o p -> q where
   default (◊) :: (Weaken o q, Weaken p q, Compose q q q) => o s t x y -> p x y a b -> q s t a b
   o ◊ p = weaken @o @q o ◊ weaken @p @q p
   {-# INLINE (◊) #-}
-
-type family (∧) (o :: Optic) (p :: Optic) :: Optic
